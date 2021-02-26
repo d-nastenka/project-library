@@ -12,7 +12,7 @@ Test::Test(QObject *parent) :
 
 void Test::addUser()
 {
-    reader a;
+    Reader a;
     //добавляем пользователя
     a.add("DGorban", "1234", "Горбань Даниил Юрьевич", "Мира д.11 кв. 21", "555533");
     //ищем пользователя
@@ -91,7 +91,7 @@ void Test::addUser()
 }
 void Test::addLibrarian()
 {
-    librarian a;
+    Librarian a;
 
     a.add("LVlasova", "7767", "Власова Любовь Леонидовна");
 
@@ -145,7 +145,7 @@ void Test::addLibrarian()
 }
 
 void Test::removeLibrarian(){
-    librarian a;
+    Librarian a;
 
     a.remove("Власова Любовь Леонидовна");
     QSqlQuery query("SELECT "

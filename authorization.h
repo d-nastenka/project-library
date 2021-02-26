@@ -4,16 +4,16 @@
 #include <QWidget>
 
 namespace Ui {
-class authorization;
+class Authorization;
 }
 
-class authorization : public QWidget
+class Authorization : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit authorization(QWidget *parent = nullptr);
-    ~authorization();
+    explicit Authorization(QWidget *parent = nullptr);
+    ~Authorization();
     QString getLogin();
     QString getPass();
 
@@ -28,7 +28,7 @@ private slots:
     void on_lineEdit_2_textEdited(const QString &arg1);
 
 private:
-    Ui::authorization *ui;
+    Ui::Authorization *ui;
     QString m_username;
     QString m_userpass;
 };

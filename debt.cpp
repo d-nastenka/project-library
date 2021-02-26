@@ -4,9 +4,9 @@
 #include <iostream>
 #include <sstream>
 
-debt::debt(QWidget *parent) :
+Debt::Debt(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::debt)
+    ui(new Ui::Debt)
 {
     ui->setupUi(this);
 
@@ -76,12 +76,12 @@ debt::debt(QWidget *parent) :
     ui->tableWidget->resizeColumnsToContents();
 }
 
-debt::~debt()
+Debt::~Debt()
 {
     delete ui;
 }
 
-void debt::on_pushButton_clicked()
+void Debt::on_pushButton_clicked()
 {
-    debt::close();
+    Debt::close();
 }

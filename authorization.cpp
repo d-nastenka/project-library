@@ -1,38 +1,38 @@
 #include "authorization.h"
 #include "ui_authorization.h"
 
-authorization::authorization(QWidget *parent) :
+Authorization::Authorization(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::authorization)
+    ui(new Ui::Authorization)
 {
     ui->setupUi(this);
 }
 
-authorization::~authorization()
+Authorization::~Authorization()
 {
     delete ui;
 }
 
-void authorization::on_pushButton_clicked()
+void Authorization::on_pushButton_clicked()
 {
     emit pushButton_clicked();
 }
 
-void authorization::on_lineEdit_textEdited(const QString &arg1)
+void Authorization::on_lineEdit_textEdited(const QString &arg1)
 {
-    authorization::m_username = arg1;
+    Authorization::m_username = arg1;
 }
 
-void authorization::on_lineEdit_2_textEdited(const QString &arg1)
+void Authorization::on_lineEdit_2_textEdited(const QString &arg1)
 {
-    authorization::m_userpass = arg1;
+    Authorization::m_userpass = arg1;
 }
-QString authorization::getLogin()
+QString Authorization::getLogin()
 {
-    return authorization::m_username;
+    return Authorization::m_username;
 }
 
-QString authorization::getPass()
+QString Authorization::getPass()
 {
-    return authorization::m_userpass;
+    return Authorization::m_userpass;
 }

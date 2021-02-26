@@ -1,9 +1,9 @@
 #include "librarian.h"
 #include "ui_librarian.h"
 
-librarian::librarian(QWidget *parent) :
+Librarian::Librarian(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::librarian)
+    ui(new Ui::Librarian)
 {
     ui->setupUi(this);
 
@@ -55,17 +55,17 @@ librarian::librarian(QWidget *parent) :
         ui->tableWidget->resizeColumnsToContents();
 }
 
-librarian::~librarian()
+Librarian::~Librarian()
 {
     delete ui;
 }
 
-void librarian::on_pushButton_clicked()
+void Librarian::on_pushButton_clicked()
 {
     ui_add_librarian.show();
 }
 
-void librarian::remove(QString name){
+void Librarian::remove(QString name){
     QSqlQuery query1;
     query1.prepare("DELETE FROM LibrarianTable WHERE Name = '" + name + "'");
     if(!query1.exec()){
@@ -74,7 +74,7 @@ void librarian::remove(QString name){
     }
 }
 
-void librarian::on_pushButton_2_clicked() //Удалить
+void Librarian::on_pushButton_2_clicked() //Удалить
 {
     int i = ui->tableWidget->currentRow();
     if (i==-1){
@@ -116,19 +116,19 @@ void librarian::on_pushButton_2_clicked() //Удалить
     ui->tableWidget->resizeColumnsToContents();
 }
 
-void librarian::on_pushButton_3_clicked()
+void Librarian::on_pushButton_3_clicked()
 {
-    librarian::close();
+    Librarian::close();
 }
 
-void librarian::add(QString login, QString password, QString name){
+void Librarian::add(QString login, QString password, QString name){
     qDebug()<<db->inserIntoLibrarianTable(QVariantList()<< login
                                                         << password
                                                         << name
                                                         << "librarian");
 }
 
-void librarian::addLIBRERIAN(){
+void Librarian::addLIBRERIAN(){
     u_login = ui_add_librarian.getLogin();
     u_password = ui_add_librarian.getPassword();
     u_name = ui_add_librarian.getName();

@@ -1,15 +1,15 @@
 #include "issued_books.h"
 #include "ui_issued_books.h"
 
-issued_books::issued_books(QWidget *parent) :
+Issued_books::Issued_books(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::issued_books)
+    ui(new Ui::Issued_books)
 {
     ui->setupUi(this);
 
 }
 
-void issued_books::getTicket(QString u_ticket){
+void Issued_books::getTicket(QString u_ticket){
     db = new DataBase();
     db->connectToDataBase();
 
@@ -81,12 +81,12 @@ void issued_books::getTicket(QString u_ticket){
     ui->tableWidget->resizeColumnsToContents();
 }
 
-issued_books::~issued_books()
+Issued_books::~Issued_books()
 {
     delete ui;
 }
 
-void issued_books::on_pushButton_clicked()
+void Issued_books::on_pushButton_clicked()
 {
-    issued_books::close();
+    Issued_books::close();
 }

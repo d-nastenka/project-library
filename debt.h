@@ -5,22 +5,22 @@
 #include <database.h>
 
 namespace Ui {
-class debt;
+class Debt;
 }
 
-class debt : public QWidget
+class Debt : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit debt(QWidget *parent = nullptr);
-    ~debt();
+    explicit Debt(QWidget *parent = nullptr);
+    ~Debt();
 
 private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::debt *ui;
+    Ui::Debt *ui;
 
     DataBase    *db;
 };

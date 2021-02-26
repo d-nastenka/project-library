@@ -7,13 +7,13 @@ namespace Ui {
 class add_librarian;
 }
 
-class add_librarian : public QWidget
+class Add_librarian : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit add_librarian(QWidget *parent = nullptr);
-    ~add_librarian();
+    explicit Add_librarian(QWidget *parent = nullptr);
+    ~Add_librarian();
 
     QString getLogin();
     QString getPassword();

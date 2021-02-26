@@ -2,9 +2,9 @@
 #include "ui_reader.h"
 #include "QDebug"
 
-reader::reader(QWidget *parent) :
+Reader::Reader(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::reader)
+    ui(new Ui::Reader)
 {
     ui->setupUi(this);
     connect(&ui_add_reader, SIGNAL(addReader()),
@@ -65,22 +65,22 @@ reader::reader(QWidget *parent) :
     ui->tableWidget->resizeColumnsToContents();
 }
 
-reader::~reader()
+Reader::~Reader()
 {
     delete ui;
 }
 
-void reader::on_pushButton_clicked() //Добавить
+void Reader::on_pushButton_clicked() //Добавить
 {
     ui_add_reader.show();
 }
 
-void reader::on_pushButton_3_clicked() //Закрыть
+void Reader::on_pushButton_3_clicked() //Закрыть
 {
-    reader::close();
+    Reader::close();
 }
 
-void reader::add(QString login, QString password, QString name, QString adress, QString number){
+void Reader::add(QString login, QString password, QString name, QString adress, QString number){
     qDebug()<<db->inserIntoUserTable(QVariantList()     << login
                                                         << password
                                                         << name
@@ -89,7 +89,7 @@ void reader::add(QString login, QString password, QString name, QString adress, 
                                                         << adress);
 }
 
-void reader::addUSER(){
+void Reader::addUSER(){
 
     u_login = ui_add_reader.getLogin();
     u_password = ui_add_reader.getPassword();

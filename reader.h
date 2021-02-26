@@ -6,16 +6,16 @@
 #include "database.h"
 
 namespace Ui {
-class reader;
+class Reader;
 }
 
-class reader : public QWidget
+class Reader : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit reader(QWidget *parent = nullptr);
-    ~reader();
+    explicit Reader(QWidget *parent = nullptr);
+    ~Reader();
     void add(QString login, QString password, QString name, QString adress, QString number);
 
 signals:
@@ -26,8 +26,8 @@ private slots:
     void on_pushButton_3_clicked();
 
 private:
-    Ui::reader *ui;
-    add_reader ui_add_reader;
+    Ui::Reader *ui;
+    Add_reader ui_add_reader;
 
     DataBase    *db;
 

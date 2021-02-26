@@ -2,19 +2,19 @@
 #include "ui_addbook.h"
 #include <QMessageBox>
 
-addBook::addBook(QWidget *parent) :
+AddBook::AddBook(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::addBook)
 {
     ui->setupUi(this);
 }
 
-addBook::~addBook()
+AddBook::~AddBook()
 {
     delete ui;
 }
 
-void addBook::on_pushButton_clicked() //Добавить
+void AddBook::on_pushButton_clicked() //Добавить
 {
 
     if(ui->lineEdit->text().size()!=0 && ui->lineEdit_2->text().size()!=0 && ui->lineEdit_3->text().size()!=0 && ui->lineEdit_4->text().size()!=0)
@@ -24,45 +24,45 @@ void addBook::on_pushButton_clicked() //Добавить
     }
 }
 
-void addBook::on_pushButton_2_clicked() //Отменить
+void AddBook::on_pushButton_2_clicked() //Отменить
 {
-    addBook::close();
+    AddBook::close();
 }
 
-void addBook::on_lineEdit_textEdited(const QString &arg1)
+void AddBook::on_lineEdit_textEdited(const QString &arg1)
 {
-    addBook::m_name = arg1;
+    AddBook::m_name = arg1;
 }
 
-void addBook::on_lineEdit_2_textEdited(const QString &arg1)
+void AddBook::on_lineEdit_2_textEdited(const QString &arg1)
 {
-    addBook::m_author = arg1;
+    AddBook::m_author = arg1;
 }
 
-void addBook::on_lineEdit_3_textEdited(const QString &arg1)
+void AddBook::on_lineEdit_3_textEdited(const QString &arg1)
 {
-    addBook::m_numbers = arg1;
+    AddBook::m_numbers = arg1;
 }
 
-void addBook::on_lineEdit_4_textEdited(const QString &arg1)
+void AddBook::on_lineEdit_4_textEdited(const QString &arg1)
 {
-    addBook::m_cost = arg1;
+    AddBook::m_cost = arg1;
 }
-QString addBook::getName()
+QString AddBook::getName()
 {
-    return addBook::m_name;
+    return AddBook::m_name;
 }
-QString addBook::getAuthor()
+QString AddBook::getAuthor()
 {
-    return addBook::m_author;
+    return AddBook::m_author;
 }
-QString addBook::getNumbers()
+QString AddBook::getNumbers()
 {
-    return addBook::m_numbers;
+    return AddBook::m_numbers;
 }
-QString addBook::getCost()
+QString AddBook::getCost()
 {
-    return addBook::m_cost;
+    return AddBook::m_cost;
 }
 
 

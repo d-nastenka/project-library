@@ -6,23 +6,23 @@
 #include "database.h"
 
 namespace Ui {
-class issued_books;
+class Issued_books;
 }
 
-class issued_books : public QWidget
+class Issued_books : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit issued_books(QWidget *parent = nullptr);
-    ~issued_books();
+    explicit Issued_books(QWidget *parent = nullptr);
+    ~Issued_books();
     void getTicket(QString m_ticket);
 
 private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::issued_books *ui;
+    Ui::Issued_books *ui;
     DataBase        *db;
 };
 

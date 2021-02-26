@@ -6,16 +6,16 @@
 #include "add_librarian.h"
 
 namespace Ui {
-class librarian;
+class Librarian;
 }
 
-class librarian : public QWidget
+class Librarian : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit librarian(QWidget *parent = nullptr);
-    ~librarian();
+    explicit Librarian(QWidget *parent = nullptr);
+    ~Librarian();
     void add(QString login, QString password, QString name);
     void remove(QString name);
 
@@ -30,9 +30,9 @@ private slots:
     void addLIBRERIAN();
 
 private:
-    Ui::librarian *ui;
+    Ui::Librarian *ui;
 
-    add_librarian ui_add_librarian;
+    Add_librarian ui_add_librarian;
 
     DataBase    *db;
 

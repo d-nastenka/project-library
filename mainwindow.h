@@ -50,12 +50,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    authorization ui_Auth; // экземпляры окна авторизации и окна регистрации
-    addBook ui_Add;
-    reader ui_reader;
-    librarian ui_librarian;
-    issued_books ui_ib;
-    debt ui_debt;
+    Authorization ui_Auth; // экземпляры окна авторизации и окна регистрации
+    AddBook ui_Add;
+    Reader ui_reader;
+    Librarian ui_librarian;
+    Issued_books ui_ib;
+    Debt ui_debt;
     //add_reader ui_add_reader;
 
     QString m_username; // строки для обработки

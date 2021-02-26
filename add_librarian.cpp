@@ -2,19 +2,19 @@
 #include "ui_add_librarian.h"
 #include <QMessageBox>
 
-add_librarian::add_librarian(QWidget *parent) :
+Add_librarian::Add_librarian(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::add_librarian)
 {
     ui->setupUi(this);
 }
 
-add_librarian::~add_librarian()
+Add_librarian::~Add_librarian()
 {
     delete ui;
 }
 
-void add_librarian::on_pushButton_clicked() //Добавить
+void Add_librarian::on_pushButton_clicked() //Добавить
 {
     if(ui->lineEdit->text().size()!=0 && ui->lineEdit_2->text().size()!=0 && ui->lineEdit_3->text().size()!=0)
         emit addLibrerian();
@@ -23,35 +23,35 @@ void add_librarian::on_pushButton_clicked() //Добавить
     }
 }
 
-void add_librarian::on_pushButton_2_clicked() //Удалить
+void Add_librarian::on_pushButton_2_clicked() //Удалить
 {
-    add_librarian::close();
+    Add_librarian::close();
 }
 
-void add_librarian::on_lineEdit_textEdited(const QString &arg1) //Логин
+void Add_librarian::on_lineEdit_textEdited(const QString &arg1) //Логин
 {
-    add_librarian::m_login = arg1;
+    Add_librarian::m_login = arg1;
 }
 
-void add_librarian::on_lineEdit_2_textEdited(const QString &arg1) //Пароль
+void Add_librarian::on_lineEdit_2_textEdited(const QString &arg1) //Пароль
 {
-    add_librarian::m_password = arg1;
+    Add_librarian::m_password = arg1;
 }
 
-void add_librarian::on_lineEdit_3_textEdited(const QString &arg1) //ФИО
+void Add_librarian::on_lineEdit_3_textEdited(const QString &arg1) //ФИО
 {
-    add_librarian::m_name = arg1;
+    Add_librarian::m_name = arg1;
 }
 
-QString add_librarian::getLogin()
+QString Add_librarian::getLogin()
 {
-    return add_librarian::m_login;
+    return Add_librarian::m_login;
 }
-QString add_librarian::getPassword()
+QString Add_librarian::getPassword()
 {
-    return add_librarian::m_password;
+    return Add_librarian::m_password;
 }
-QString add_librarian::getName()
+QString Add_librarian::getName()
 {
-    return add_librarian::m_name;
+    return Add_librarian::m_name;
 }

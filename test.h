@@ -15,8 +15,6 @@ private slots:
     void removeLibrarian();
 private:
     DataBase    *db;
-
-
 };
 
 #endif // TEST_H

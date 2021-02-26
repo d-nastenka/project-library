@@ -7,13 +7,13 @@ namespace Ui {
 class addBook;
 }
 
-class addBook : public QWidget
+class AddBook : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit addBook(QWidget *parent = nullptr);
-    ~addBook();
+    explicit AddBook(QWidget *parent = nullptr);
+    ~AddBook();
     QString getName();
     QString getAuthor();
     QString getNumbers();

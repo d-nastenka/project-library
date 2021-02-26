@@ -2,19 +2,19 @@
 #include "ui_add_reader.h"
 #include <QMessageBox>
 
-add_reader::add_reader(QWidget *parent) :
+Add_reader::Add_reader(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::add_reader)
 {
     ui->setupUi(this);
 }
 
-add_reader::~add_reader()
+Add_reader::~Add_reader()
 {
     delete ui;
 }
 
-void add_reader::on_pushButton_clicked()  //Добавить пользователя
+void Add_reader::on_pushButton_clicked()  //Добавить пользователя
 {
     if(ui->lineEdit->text().size()!=0 && ui->lineEdit_2->text().size()!=0 && ui->lineEdit_3->text().size()!=0 && ui->lineEdit_4->text().size()!=0 && ui->lineEdit_5->text().size()!=0)
         emit addReader();
@@ -23,53 +23,53 @@ void add_reader::on_pushButton_clicked()  //Добавить пользоват�
     }
 }
 
-void add_reader::on_pushButton_2_clicked() //Отменить
+void Add_reader::on_pushButton_2_clicked() //Отменить
 {
-    add_reader::close();
+    Add_reader::close();
 }
 
-void add_reader::on_lineEdit_textEdited(const QString &arg1) //Логин
+void Add_reader::on_lineEdit_textEdited(const QString &arg1) //Логин
 {
-    add_reader::m_login = arg1;
+    Add_reader::m_login = arg1;
 }
 
-void add_reader::on_lineEdit_2_textEdited(const QString &arg1) //Пароль
+void Add_reader::on_lineEdit_2_textEdited(const QString &arg1) //Пароль
 {
-    add_reader::m_password = arg1;
+    Add_reader::m_password = arg1;
 }
 
-void add_reader::on_lineEdit_3_textEdited(const QString &arg1) //ФИО
+void Add_reader::on_lineEdit_3_textEdited(const QString &arg1) //ФИО
 {
-    add_reader::m_name = arg1;
+    Add_reader::m_name = arg1;
 }
 
-void add_reader::on_lineEdit_4_textEdited(const QString &arg1) //Адрес
+void Add_reader::on_lineEdit_4_textEdited(const QString &arg1) //Адрес
 {
-    add_reader::m_adress = arg1;
+    Add_reader::m_adress = arg1;
 }
 
-void add_reader::on_lineEdit_5_textEdited(const QString &arg1) //Номер билета
+void Add_reader::on_lineEdit_5_textEdited(const QString &arg1) //Номер билета
 {
-    add_reader::m_ticket = arg1;
+    Add_reader::m_ticket = arg1;
 }
 
-QString add_reader::getLogin()
+QString Add_reader::getLogin()
 {
-    return add_reader::m_login;
+    return Add_reader::m_login;
 }
-QString add_reader::getPassword()
+QString Add_reader::getPassword()
 {
-    return add_reader::m_password;
+    return Add_reader::m_password;
 }
-QString add_reader::getName()
+QString Add_reader::getName()
 {
-    return add_reader::m_name;
+    return Add_reader::m_name;
 }
-QString add_reader::getAdress()
+QString Add_reader::getAdress()
 {
-    return add_reader::m_adress;
+    return Add_reader::m_adress;
 }
-QString add_reader::getTicket()
+QString Add_reader::getTicket()
 {
-    return add_reader::m_ticket;
+    return Add_reader::m_ticket;
 }

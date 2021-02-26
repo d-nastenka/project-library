@@ -7,13 +7,13 @@ namespace Ui {
 class add_reader;
 }
 
-class add_reader : public QWidget
+class Add_reader : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit add_reader(QWidget *parent = nullptr);
-    ~add_reader();
+    explicit Add_reader(QWidget *parent = nullptr);
+    ~Add_reader();
 
     QString getLogin();
     QString getPassword();
