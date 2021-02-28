@@ -18,7 +18,6 @@
 #include <QSqlQuery>
 
 #include <database.h>
-#include <database_user.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -29,14 +28,6 @@ namespace Ui {
     class MainWindow;
 }
 
-struct Book{
-    QString name;
-    QString author;
-    int numbers;
-    int cost;
-    int ticket;
-    QDate date;
-};
 //Q_DECLARE_METATYPE(Book*)
 
 class MainWindow : public QMainWindow
@@ -46,7 +37,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void display();
+    //void display();
 
 private:
     Ui::MainWindow *ui;

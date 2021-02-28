@@ -34,24 +34,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::authorizeUser()
 {
-/*
-    db->inserIntoLibrarianTable(QVariantList() << "Anastasia"
-                                           << "1234"
-                                           << "Анастасия Юрьевна"
-                                           << "librarian");
-
-    db->inserIntoDeviceTable(QVariantList() << QString::number(0)
-                                                        << "чтиво"
-                                                        << "Толстой А В"
-                                                        << "10"
-                                                        << "25"
-                                                        << NULL
-                                                        << NULL);
-*/
     m_username = ui_Auth.getLogin();
     m_userpass = ui_Auth.getPass();
 
     m_loginSuccesfull = false;
+
     if (!m_username.size() || !m_userpass.size()){
         QMessageBox::warning(this, QString("Attantion!"), QString("Title is empty."), QMessageBox::Ok);
     }
@@ -98,8 +85,6 @@ void MainWindow::authorizeUser()
     if(!query.exec()){
         qDebug() << "error check " << "UserTable";
         qDebug() << query.lastError().text();
-    } else {
-        qDebug()<<"true";
     }
 
     if(!m_loginSuccesfull)
@@ -193,8 +178,6 @@ void MainWindow::createUI()
 
     for(int i = 0; query.next(); i++){
         //qDebug()<<i<<query.value(0).toString()<<query.value(1).toString()<<query.value(2).toString();
-        if(query.value(2) == NULL)
-            continue;
         ui->tableWidget->insertRow(i);
 
         QTableWidgetItem *item1 = new QTableWidgetItem(query.value(0).toString());
@@ -416,15 +399,11 @@ void MainWindow::on_pushButton_3_clicked() //выдать книгу
     if(!query.exec()){
         qDebug() << "error update " << DEVICE;
         qDebug() << query.lastError().text();
-    } else {
-        //qDebug()<<"true1";
     }
     query.prepare("UPDATE BooksTable Set Ticket = '" + ui->lineEdit->text() + "' WHERE id=" + ui->tableWidget->item(i,0)->text());
     if(!query.exec()){
         qDebug() << "error update " << DEVICE;
         qDebug() << query.lastError().text();
-    } else {
-        //qDebug()<<"true2";
     }
     QDate cd = QDate::currentDate();
 
@@ -449,7 +428,7 @@ void MainWindow::on_action_3_triggered() // библиотекари
     ui_librarian.show();
 }
 
-void MainWindow::on_action_5_triggered()
+void MainWindow::on_action_5_triggered() //выданные книги
 {
     ui_ib.show();
     ui_ib.getTicket(m_ticket);
@@ -468,32 +447,24 @@ void MainWindow::on_pushButton_4_clicked() // вернуть книгу
     if(!query.exec()){
         qDebug() << "error update " << DEVICE;
         qDebug() << query.lastError().text();
-    } else {
-        //qDebug()<<"true1";
     }
     query.prepare("UPDATE BooksTable Set Ticket = '0' WHERE id=" + ui->tableWidget->item(i,0)->text());
     if(!query.exec()){
         qDebug() << "error update " << DEVICE;
         qDebug() << query.lastError().text();
-    } else {
-        //qDebug()<<"true2";
     }
 
     query.prepare("UPDATE BooksTable Set Date ='0' WHERE id=" + ui->tableWidget->item(i,0)->text());
     if(!query.exec()){
         qDebug() << "error update " << DEVICE;
         qDebug() << query.lastError().text();
-    } else {
-        //qDebug()<<"true3";
     }
-
-    //ui->tableWidget->removeRow(i);
 
     updateTable();
 
 }
 
-void MainWindow::on_action_4_triggered()
+void MainWindow::on_action_4_triggered() //задолжники
 {
     ui_debt.show();
 }

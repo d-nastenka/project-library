@@ -52,9 +52,11 @@ Reader::Reader(QWidget *parent) :
             QTableWidgetItem *item = new QTableWidgetItem(query.value(1).toString());
             item->setFlags(item->flags() ^ Qt::ItemIsEditable);
             ui->tableWidget->setItem(i,1, item);
+
             QTableWidgetItem *item2 = new QTableWidgetItem(query.value(2).toString());
             item2->setFlags(item2->flags() ^ Qt::ItemIsEditable);
             ui->tableWidget->setItem(i,2, item2);
+
             QTableWidgetItem *item3 = new QTableWidgetItem(query.value(3).toString());
             item3->setFlags(item3->flags() ^ Qt::ItemIsEditable);
             ui->tableWidget->setItem(i,3, item3);

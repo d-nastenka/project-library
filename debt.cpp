@@ -45,7 +45,7 @@ Debt::Debt(QWidget *parent) :
     for(int i = 0; query.next(); i++){
 
         QString u_date = query.value(4).toString();
-        QDate dt1 = QDate::fromString(u_date,"dd:MM:yyyy");
+        QDate dt1 = QDate::fromString(u_date,"dd:MM:yyyy"); //дата когда взяли книгу
         QDate cd = QDate::currentDate();
 
         if(dt1.daysTo(cd)>=30 && query.value(3).toInt() != 0){

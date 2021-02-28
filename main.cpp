@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 
     freopen("testing.log", "w", stdout);
     QTest::qExec(new Test, argc, argv);
+
     w.show();
 
     return a.exec();
